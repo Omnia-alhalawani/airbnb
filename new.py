@@ -63,7 +63,7 @@ fig_box_dist = px.box(
 
 # Start Dash app
 app = Dash(__name__)
-
+server=app.server
 # Layout with dropdowns + all charts
 app.layout = html.Div([
     html.H1("Airbnb Listings in NYC", style={
@@ -150,4 +150,4 @@ def update_graphs(selected_ng, selected_rt):
 
 # Run app
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=8080)
